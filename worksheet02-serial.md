@@ -4,7 +4,7 @@
 
 ---
 
-### Step 0 - Unplug your Pi from the Power
+### Step 0 - Unplug your Pi from the USB Power
 
 Make sure your Pi is powered off before continuing.
 
@@ -15,8 +15,12 @@ Also, unplug the keyboard if it is still plugged in.
 
 This will depend on your computer (Windows/Mac/Linux). Your instructor will guide you through it.
 
+Drivers download link: 
 
-### Step 2 - Get to know the GPIO
+[http://prolificusa.com/portfolio/pl2303ta-usb-serial-bridge-controller/](http://prolificusa.com/portfolio/pl2303ta-usb-serial-bridge-controller/)
+
+
+### Step 2 - Get to know the GPIO (Model B+)
 
 
 ![GPIO](http://www.element14.com/community/servlet/JiveServlet/previewBody/68203-102-6-294412/GPIO.png)
@@ -28,6 +32,12 @@ This will depend on your computer (Windows/Mac/Linux). Your instructor will guid
 
 
 ### Step 4 - Plug the serial cable to the Pi
+
+As shown in the image, from LEFT to RIGHT.
+
+- GND - Black
+- TXD - White
+- RXD - Green
 
 ![Serial 02](https://raw.githubusercontent.com/MincheeLab/raspberrypi101/master/images/serial/serial02.jpg)
 
@@ -42,13 +52,24 @@ This will depend on your computer (Windows/Mac/Linux). Your instructor will guid
 
 ### Step 7 - Start your serial software
 
-This will depend on your computer. Our instructors will assist you.
+This will depend on your operating system. Our instructors will assist you.
 
-For Mac users, open a terminal and type:
+#### For Mac users, open a terminal and type:
 
 ```
 screen /dev/tty.usbserial 115200
 ```
+
+#### For Windows users, you need PuTTY
+
+[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+
+**Configuration:**
+
+- Connection type:	Serial
+- Speed: 115200
+- Serial line: <have to check in device manager>
+
 
 ### Step 8 - Plug your Pi to the power
 
