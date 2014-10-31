@@ -96,4 +96,6 @@ Finally plug the Micro USB charging cable to the power slot on the Pi.
 
 Your Pi should now be powered on, and a red LED should turn on. Another LED, green, should blink intermittently as the Pi loads it's NOOBs installer.
 
+You are now ready for the "blind" (semi-headless) NOOBS setup, using a keyboard but not a screen.
+
 ![Setup 15](https://raw.githubusercontent.com/MincheeLab/raspberrypi101/master/images/setup/setup15.jpg)
