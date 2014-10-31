@@ -4,13 +4,31 @@
 
 ---
 
-### Step 1 - SSH into the Pi
+### Step 1 - Prepare the GPIO connection
+
+You will connect an LED and a buzzer to your Pi via the GPIO.
+
+First you need to connect your GPIO to your breadboard via the 40 pin GPIO ribbon. 
+
+Make sure the red strip on the ribbon is on the side of the USB ports on your Pi.
+
+
+Next insert the T-Cobbler into the breadboard, as indicated on the image.
+
+It doesn't matter the exact location of the T-Cobbler on the breadboard, just make sure it is properly seated against the breadboard.
+
+
+Now, insert the other end of the GPIO ribbon into the T-Cobbler. It can only go one way, due to the small latch in the middle of the connector.
+
+Use some jumper wires to connect GPIO port 17 (#17) and a GROUND (GND) pin to further down the breadboard.
+
+### Step 2 - SSH into the Pi
 
 SSH into your Pi as detailed in Worksheet 3.
 
 
 
-### Step 2 - Install GPIO python library
+### Step 3 - Install GPIO python library
 
 In order to access the GPIO from Python you need to install the necessary libraries.
 
@@ -19,21 +37,21 @@ In order to access the GPIO from Python you need to install the necessary librar
 sudo pip install RPi.GPIO
 ```
 
-### Step 3 - Create a directory for your Python script
+### Step 4 - Create a directory for your Python script
 ```
 cd ~
 mkdir mygpio
 cd mygpio
 ```
 
-### Step 4 - Switch to root user (required to access GPIO)
+### Step 5 - Switch to root user (required to access GPIO)
 Switch to ROOT is more convenient. **ROOT permissions is required for using GPIO !!!**
 
 ```
 sudo su
 ```
 
-### Step 5 - Create a simple Python script
+### Step 6 - Create a simple Python script
 
 Use nano to create a new file:
 
@@ -71,10 +89,12 @@ GPIO.cleanup()
 Save your file and exit nano (Crtl-O and Ctrl-X)
 
 
-### Step 6 - Run your script
+### Step 7 - Run your script
 
 Back in the command line, run your script:
 
 ```
 python blink.py
 ```
+
+Your LED should light up and your buzzer should make a sound.
