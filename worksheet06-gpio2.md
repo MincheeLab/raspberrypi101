@@ -26,7 +26,6 @@ sudo pip install RPi.GPIO
 cd ~
 mkdir hello_world
 cd hello_world
-virtualenv venv
 ```
 
 Switch to ROOT is more convenience. **ROOT permissions is required for using GPIO !!!**
@@ -34,14 +33,6 @@ Switch to ROOT is more convenience. **ROOT permissions is required for using GPI
 ```
 sudo su
 ```
-
-Activate **VirtualEnv**
-
-```
-. venv/bin/activate
-```
-
-Then you will see a new prefix "(venv)"
 
 ### Step 4: Program some application
 
