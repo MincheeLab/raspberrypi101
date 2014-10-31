@@ -32,7 +32,7 @@ virtualenv venv
 Switch to ROOT is more convenience. **ROOT permissions is required for using GPIO !!!**
 
 ```
-sudo -i
+sudo su
 ```
 
 Activate **VirtualEnv**
@@ -89,9 +89,9 @@ def hello_world():
 
 @app.route('/blink')
 def blinkit():
-    GPIO.setup(27, GPIO.OUT)
+    GPIO.setup(11, GPIO.OUT)
     for i in range(0,10):
-        blink(27)
+        blink(11)
     GPIO.cleanup()
     return 'blink blink !'
 
@@ -103,7 +103,7 @@ def blink(pin):
     return
 
 if __name__ == '__main__':
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     app.debug=True
     app.run(host='0.0.0.0')
 
