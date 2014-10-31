@@ -15,6 +15,7 @@ In this worksheet, we will go throught basic installation of Flask - very minimu
 ```
 sudo pip install virtualenv
 sudo pip install flask
+sudo pip install RPi.GPIO
 ```
 
 
