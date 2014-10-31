@@ -8,6 +8,8 @@
 
 SSH into your Pi as detailed in Worksheet 3.
 
+
+
 ### Step 2 - Install GPIO python library
 
 In order to access the GPIO from Python you need to install the necessary libraries.
