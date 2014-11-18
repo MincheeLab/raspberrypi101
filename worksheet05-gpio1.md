@@ -52,6 +52,7 @@ In order to access the GPIO from Python you need to install the necessary librar
 
 
 ```
+sudo apt-get install python-pip
 sudo pip install RPi.GPIO
 ```
 

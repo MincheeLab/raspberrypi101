@@ -10,7 +10,7 @@ This will depend on your computer (Windows/Mac/Linux). Your instructor will guid
 
 For Mac/Linux users:
 
-```ssh pi@<your_pi_ip_address>```
+```ssh pi@your_pi_ip_address```
 
 Windows users should use Putty for this.
 
@@ -24,6 +24,7 @@ Are you sure you want to continue connecting (yes/no)? yes
 
 Make sure to type 'yes' and Enter.
 
+Use the same password as in the previous exercise (raspberry).
 
 Again you may see the message:
 
