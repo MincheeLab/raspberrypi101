@@ -11,7 +11,7 @@
 ### Step 2 - Install a mail server (postfix)
 
 ```
-sudo apt-get install postfix dnsutils
+sudo apt-get install postfix dnsutils mailutils
 ```
 
 After initial installation scripts, the following options are presented.
