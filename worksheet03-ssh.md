@@ -12,7 +12,7 @@ For Mac/Linux users:
 
 ```ssh pi@your_pi_ip_address```
 
-Windows users should use Putty for this.
+Windows users should use** PuTTY **for this.
 
 You may be prompted with a message such as:
 
