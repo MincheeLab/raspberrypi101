@@ -130,11 +130,14 @@ This opens a new editor window (nano) with the following contents:
 # m h  dom mon dow   command
 ```
 
-Scroll to the bottom of the file and, below the ```m h  dom mon dow   command``` line, copy/paste the following line:
+Scroll to the bottom of the file and, below the ```m h  dom mon dow   command``` line, copy/paste the following lines:
 
 ```
+SHELL=/bin/bash
 * * * * * /bin/bash ~/bin/mailip.sh
 ```
+
+Note: The first line is to force cron to use Bash as a shell, which our script requires.
 
 Save and quit nano (Ctrl-O, Ctrl-X).
 
