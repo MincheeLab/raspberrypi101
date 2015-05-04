@@ -5,8 +5,15 @@
 
 ---
 
-### Step 1 - SSH into your Pi
 
+
+### Step 0 - Pre-requisites
+
+This worksheet assumes that you ran through some of the previous worksheets. If not then you should at least run the following command before proceeding:
+
+```
+sudo apt-get update
+```
 
 ### Step 2 - Install a mail server (postfix)
 
@@ -83,6 +90,11 @@ fi
 
 Remember to Ctrl-O to save your file, followed by Crtl-X to exit the editor.
 
+In order to run the script, you need to change its permissions and make it executable:
+
+```
+chmod u+x mailip.sh
+```
 
 
 ### Step 4 - Test your script
