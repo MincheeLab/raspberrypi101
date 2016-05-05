@@ -62,12 +62,14 @@ Copy/paste the following code to your editor
 RECIPIENT_EMAIL_ADDRESS=your@email.com
 
 LAN_IPADDRESS=$(/sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
+WLAN_IPADDRESS=$(/sbin/ifconfig wlan0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
 WAN_IPADDRESS=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 EMAIL_BODY=""
 
 touch ~/.current_ip_lan
 touch ~/.current_ip_wan
+touch ~/.current_ip_wlan
 
 if [[ "${LAN_IPADDRESS}" != $(cat ~/.current_ip_lan) ]]
 then
@@ -75,16 +77,22 @@ then
         echo ${LAN_IPADDRESS} >|~/.current_ip_lan
 fi
 
+if [[ "${WLAN_IPADDRESS}" != $(cat ~/.current_ip_wlan) ]]
+then
+        EMAIL_BODY+= "Your RPi has a new WLAN IP address: ${WLAN_IPADDRESS}\n"
+        echo ${WLAN_IPADDRESS} >|~/.current_ip_wlan
+fi
+
 if [[ "${WAN_IPADDRESS}" != $(cat ~/.current_ip_wan) ]]
 then
-        EMAIL_BODY+="Your RPi has a new WAN IP address: ${WAN_IPADDRESS}"
+        EMAIL_BODY+="Your RPi has a new WAN IP | LAN IP addresses: ${WAN_IPADDRESS}\n"
         echo ${WAN_IPADDRESS} >|~/.current_ip_wan
 fi
 
 if [[ "${EMAIL_BODY}" != "" ]]
 then
-        echo -e "${EMAIL_BODY}" |
-        mail -s "RPi IP address change" ${RECIPIENT_EMAIL_ADDRESS}
+        echo -e "${EMAIL_BODY}\n\n ------------\n LAN IP: ${LAN_IPADDRESS} | WLAN IP: ${WLAN_IPADDRESS} | WAN IP: ${WAN_IPADDRESS}\n---------- \n" |
+        mail -s "RPi ${HOSTNAME} IP address update" ${RECIPIENT_EMAIL_ADDRESS}
 fi
 ```
 
