@@ -85,14 +85,14 @@ fi
 
 if [[ "${WAN_IPADDRESS}" != $(cat ~/.current_ip_wan) ]]
 then
-        EMAIL_BODY+="Your RPi has a new WAN IP | LAN IP addresses: ${WAN_IPADDRESS}\n"
+        EMAIL_BODY+="Your RPi has a new WAN IP: ${WAN_IPADDRESS}\n"
         echo ${WAN_IPADDRESS} >|~/.current_ip_wan
 fi
 
 if [[ "${EMAIL_BODY}" != "" ]]
 then
-        echo -e "${EMAIL_BODY}\n\n ------------\n LAN IP: ${LAN_IPADDRESS} | WLAN IP: ${WLAN_IPADDRESS} | WAN IP: ${WAN_IPADDRESS}\n---------- \n" |
-        mail -s "RPi ${HOSTNAME} IP address update" ${RECIPIENT_EMAIL_ADDRESS}
+        echo -e "${EMAIL_BODY}\n\n ----------------------\n LAN IP: ${LAN_IPADDRESS} | WLAN IP: ${WLAN_IPADDRESS} | WAN IP: ${WAN_IPADDRESS}\n-------------------- \n" |
+        mail -s "${HOSTNAME} IP address update" ${RECIPIENT_EMAIL_ADDRESS}
 fi
 ```
 
